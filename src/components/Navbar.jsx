@@ -51,11 +51,12 @@ const Center = styled.div`
   flex: 1;
   display: flex;
   align-items: center;
+  justify-content: center;
   text-align: center;
 `
 
 const Logo = styled.h1`
-  font-weight: bold;
+  font-weight: bold;  
 `
 
 //Right

@@ -11,12 +11,14 @@
 // type rafce for arrow function with export
 
 import React from 'react'
+import Announcement from '../components/Announcement'
 import Navbar from '../components/Navbar'
 
 const Home = () => {
   return (
     <div>
-        <Navbar/>
+      <Announcement />
+      <Navbar/>
     </div>
   )
 }
