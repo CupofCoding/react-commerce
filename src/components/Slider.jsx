@@ -37,6 +37,7 @@ const Wrapper = styled.div`
     height: 100%
     display: flex;
     transform: translateX(${props=>props.slideIndex * -100}vw);
+    transition: all 1.5s ease;
 `;
 
 //Slide container/carousel
@@ -54,7 +55,7 @@ const ImageContainer = styled.div`
     flex: 1;
 `;
 
-const Image = styled.div`
+const Image = styled.img`
     height: 80%;
     // flex: 1;
 `;
@@ -72,7 +73,7 @@ const Description = styled.p`
     margin: 50px 0;
     font-size: 20px;
     font-weight: 500;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 `;
 
 const Button = styled.button`
@@ -88,36 +89,35 @@ const Slider = () => {
 
     const handleClick = (direction) => {
     // Arrow Functionality
-        if(direction==="left"){
+        if(direction === "left") {
             // switch statement; if index is greater than 0 then -1; if not then last item id; 2
-            setSlideIndex(slideIndex > 0 ? slideIndex-1 : 2 )
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2 )
         } else {
-            setSlideIndex(slideIndex < 2 ? slideIndex +1 : 0)
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
         }
     };
   return (
     <Container>
-        <Arrow direction="left" onClick={()=>handleClick("left")}>
+        <Arrow direction="left" onClick={() => handleClick("left")}>
             <ArrowLeftOutlined />
         </Arrow>
         <Wrapper slideIndex={slideIndex}>
             {sliderItems.map((item) => (
-            <Slide bg={ item.bg }>
+            <Slide bg={item.bg}>
                 <ImageContainer>
-                    <Image src={ item.img } />
+                    <Image src={item.img} />
                 </ImageContainer>
                 <InfoContainer>
-                    <Title>{ item.title }</Title>
-                    <Description>{ item.description}</Description>
+                    <Title>{item.title}</Title>
+                    <Description>{item.description}</Description>
                     <Button>Shop Now &gt;&gt;</Button>
                 </InfoContainer>
             </Slide>
             ))}
         </Wrapper>
-        <Arrow direction="right" onClick={()=>handleClick("left")}>
+        <Arrow direction="right" onClick={() => handleClick("left")}>
             <ArrowRightOutlined />
         </Arrow>
-
     </Container>
   )
 };
