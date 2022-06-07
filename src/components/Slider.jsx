@@ -26,17 +26,17 @@ const Arrow = styled.div`
     top: 0;
     bottom: 0;
     // pass properties as JS code
-    left: ${props=> props.direction === "left" && "10px"};
-    right: ${props=> props.direction === "right" && "10px"};
+    left: ${(props) => props.direction === "left" && "10px"};
+    right: ${(props) => props.direction === "right" && "10px"};
     margin: auto;
     cursor: pointer;
     z-index: 2;
 `;
 
 const Wrapper = styled.div`
-    height: 100%
+    height: 100%;
     display: flex;
-    transform: translateX(${props=>props.slideIndex * -100}vw);
+    transform: translateX(${(props) => props.slideIndex * -100}vw);
     transition: all 1.5s ease;
 `;
 
@@ -47,7 +47,7 @@ const Slide = styled.div`
     display: flex;
     align-items: center;
     //prop-color defined
-    background-color: $(props=>props.bg);
+    background-color: #${(props) => props.bg};
 `;
 
 const ImageContainer = styled.div`
@@ -91,9 +91,9 @@ const Slider = () => {
     // Arrow Functionality
         if(direction === "left") {
             // switch statement; if index is greater than 0 then -1; if not then last item id; 2
-            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2 )
+            setSlideIndex(slideIndex > 0 ? slideIndex - 1 : 2);
         } else {
-            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0)
+            setSlideIndex(slideIndex < 2 ? slideIndex + 1 : 0);
         }
     };
   return (
@@ -103,7 +103,7 @@ const Slider = () => {
         </Arrow>
         <Wrapper slideIndex={slideIndex}>
             {sliderItems.map((item) => (
-            <Slide bg={item.bg}>
+            <Slide bg={item.bg} key={item.id}>
                 <ImageContainer>
                     <Image src={item.img} />
                 </ImageContainer>
@@ -115,7 +115,7 @@ const Slider = () => {
             </Slide>
             ))}
         </Wrapper>
-        <Arrow direction="right" onClick={() => handleClick("left")}>
+        <Arrow direction="right" onClick={() => handleClick("right")}>
             <ArrowRightOutlined />
         </Arrow>
     </Container>
