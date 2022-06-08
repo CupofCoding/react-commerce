@@ -12,6 +12,7 @@ import styled from "styled-components";
 
 const Container = styled.div`
     display: flex;
+    font-weight: 400;
 `;
 
 const Left = styled.div`
@@ -122,7 +123,7 @@ const Footer = () => {
         <Right>
             <Title>Contact</Title>
             <ContactItem>
-                <Room style={{marginRight:"10px"}}/> 123 South Shore , Fantasyland, CA 98336
+                <Room style={{marginRight:"10px"}}/> 123 South Shore, Fantasyland, CA 98336
             </ContactItem>
             <ContactItem>
                 <Phone style={{marginRight:"10px"}}/> +1 234 567 7890

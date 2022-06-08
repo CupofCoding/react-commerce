@@ -45,7 +45,7 @@ const Slide = styled.div`
     width: 100vw;
     height: 100vh;
     display: flex;
-    align-items: center;
+    align-items: center;    
     //prop-color defined
     background-color: #${(props) => props.bg};
 `;
@@ -53,10 +53,13 @@ const Slide = styled.div`
 const ImageContainer = styled.div`
     height: 100%;
     flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 const Image = styled.img`
-    height: 80%;
+    height: 80%;    
     // flex: 1;
 `;
     
