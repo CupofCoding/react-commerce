@@ -18,11 +18,7 @@
     "nodemon": "^2.0.16",
     "react": "^18.1.0",
     "react-dom": "^18.1.0",
-<<<<<<< HEAD
-    "react-router": "^6.3.0",
-=======
     "react-redux": "^8.0.2",
->>>>>>> 89802d6418ebb3e911be0a5b0d8436dfa3b09e12
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.1",
     "styled-components": "^5.3.5",
