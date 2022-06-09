@@ -84,8 +84,8 @@ const Navbar = () => {
             <Search style={{color:"gray", fontSize:16}}/>{/* icon imported, fontSize is implied pixels */}
           </SearchContainer>
         </Left>
-        <Center>
-          <Logo>PeaStore.</Logo>
+        <Center>          
+          <Logo>PeaStore.</Logo>          
         </Center>
         <Right>
           <MenuItem>Register</MenuItem>
