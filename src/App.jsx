@@ -8,11 +8,11 @@
 // run npm install @mui/material
 
 import Home from "./pages/Home";
-// import Product from "./pages/Product";
-// import ProductList from "./pages/ProductList";
-// import Cart from "./pages/Cart";
-// import Register from "./pages/Register";
-// import Login from "./pages/Login";
+import Product from "./pages/Product";
+import ProductList from "./pages/ProductList";
+import Cart from "./pages/Cart";
+import Register from "./pages/Register";
+import Login from "./pages/Login";
 // import {
 //   BrowserRouter as Router,
 //   Switch,
@@ -20,32 +20,53 @@ import Home from "./pages/Home";
 //   Redirect,
 // } from "react-router-dom";
 
+import { BrowserRouter,
+  Routes, 
+  Route,
+  Switch,
+} from 'react-router-dom';
+
 const App = () => {
-  return <Home/>; 
-  // return <Cart />
-  // return <Register />
-  // return <Login />
-  // return <Product />
+  // return <Home/>; 
+  // return <Cart />;
+  // return <Register />;
+  // return <Login />;
+  // return <Product />;
   // return <ProductList/>;    
-};
+
 
 // const Home = () => {
-  // return <Home/>; 
-//   return (    
+return (
+
+<BrowserRouter>
+      <Routes>
+        {/* <Switch> */}
+        <Route path='/' element={<Home/>} />
+        <Route path='./pages/Product"' element={<Product />} />
+        <Route path='./pages/ProductList' element={<ProductList/>} />
+        <Route path='./pages/Register' element={<Register />} />
+        <Route path='./pages/Login' element={<Login />} />
+        <Route path='./pages/Cart' element={<Cart />} />
+        {/* <Redirect to="/"> */}
+        {/* </Switch> */}
+      </Routes>
+    </BrowserRouter>
+)
+
 //     <>
 //       <Router>
 //         <Switch>
-//           <Route path='./pages/Home' component={<Home/>} />
-//           <Route path='./pages/Product"' component={<Product />} />
-//           <Route path='./pages/ProductList' component={<ProductList/>} />
-//           <Route path='./pages/Register' component={<Register />} />
-//           <Route path='./pages/Login' component={<Login />} />
-//           <Route path='./pages/Cart' component={<Cart />} />
+//           <Route path='./pages/Home' element={<Home/>} />
+//           <Route path='./pages/Product"' element={<Product />} />
+//           <Route path='./pages/ProductList' element={<ProductList/>} />
+//           <Route path='./pages/Register' element={<Register />} />
+//           <Route path='./pages/Login' element={<Login />} />
+//           <Route path='./pages/Cart' element={<Cart />} />
 //           <Redirect to="/">
 //         </Switch>
 //       </Router>
 //     </>
 //     );  
-// };
+};
 
 export default App;
