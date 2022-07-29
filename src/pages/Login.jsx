@@ -24,7 +24,7 @@ const Wrapper = styled.div`
 
 const Title = styled.h1`
   font-size: 24px;
-  font-weight: 400;
+  font-weight: 300;
 `;
 
 const Form = styled.form`
@@ -50,7 +50,6 @@ const Button = styled.button`
   border-radius: 5px;
   cursor: pointer;
   font-weight: 500;
-  transition: all 0.4s ease;
   
   &:hover{
       background-color: #206060;
@@ -68,7 +67,7 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>Sign In</Title>
+        <Title></Title>
         <Form>
           <Input placeholder='username'/>
           <Input placeholder='password'/>

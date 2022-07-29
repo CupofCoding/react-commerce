@@ -37,7 +37,6 @@ const TopButton = styled.button`
     props.type === "filled" ? "black" : "transparent"};
   color: ${(props) => props.type === "filled" && "white"};
   transition: all 0.4s ease;
-
   &:hover{
     background-color: #206060;
     color: white;
@@ -159,7 +158,6 @@ const Button = styled.button`
   font-weight: 600;
   border-radius: 4.5px;
   transition: all 0.3s ease;
-
   &:hover{
     background-color: rgba(0,0,0, 0.9);
     color: white;
