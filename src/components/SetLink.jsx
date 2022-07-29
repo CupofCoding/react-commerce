@@ -3,8 +3,18 @@ import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import styled from 'styled-components'
 
 const SetLinkWrapper = styled.a`
-  text-decoration: none;
-  list-style: none;
+    text-decoration: none;
+    list-style: none;
+    &:hover,
+    &:focus{
+        color: inherit;
+    }
+    &:active{
+        color: inherit;
+    };
+    &:visited{
+        color: inherit;
+    }
 `
 
 export function SetLink({ to, children, ...props }) {

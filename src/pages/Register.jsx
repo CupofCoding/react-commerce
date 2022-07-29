@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { SetLink } from '../components/SetLink'
 
 const Container = styled.div`
 width: 100vw;
@@ -24,7 +25,15 @@ background-color: white;
 const Title = styled.h1`
 font-size: 24px;
 font-weight: 300;
+display: flex;
+align-items: center;
+justify-content: space-between;
 `;
+
+const Logo = styled.h1`
+  font-weight: bold;
+  font-size: 30px;
+`
 
 const Form = styled.form`
 display: flex;
@@ -56,7 +65,8 @@ const Register = () => {
   return (
     <Container>
       <Wrapper>
-        <Title>CREATE AN ACCOUNT</Title>
+        <Title>CREATE AN ACCOUNT <SetLink to='/'><Logo>PeaStore.</Logo></SetLink></Title>
+        
         <Form>
           <Input placeholder="name" />
           <Input placeholder="last name" />

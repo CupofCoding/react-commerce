@@ -1,4 +1,4 @@
-import { Link, Route } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 // import { Link, useMatch, useResolvedPath } from 'react-router-dom';
 import { SetLink } from './SetLink'
 import React from 'react'
@@ -8,7 +8,7 @@ import styled from 'styled-components'
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 // run npm install @mui/material
 import { Badge } from '@mui/material'
-import Register from '../pages/Register';
+
 
 
 //styled-components are a nice way of implementing classes without conflicting class names with children
@@ -93,13 +93,13 @@ const Navbar = () => {
           <Link style={{textDecoration: 'none'}} to='/'><Logo>PeaStore.</Logo></Link>
         </Center>
         <Right>          
-          <SetLink to="./register">
+          <SetLink to="/register">
             <MenuItem>Register</MenuItem>
           </SetLink>
-          <SetLink to='./login'>
+          <SetLink to='/login'>
             <MenuItem>Sign In</MenuItem>
           </SetLink>
-          <SetLink to='./cart'>
+          <SetLink to='/cart'>
             <MenuItem>
               <Badge badgeContent={4} color="primary">
                 <ShoppingCartOutlined/>

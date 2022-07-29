@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { SetLink } from '../components/SetLink'
 
 const Container = styled.div`
   width: 100vw;
@@ -26,6 +27,10 @@ const Title = styled.h1`
   font-size: 24px;
   font-weight: 300;
 `;
+
+const Logo = styled.h1`
+  font-weight: bold;  
+`
 
 const Form = styled.form`
   display: flex;
@@ -67,7 +72,9 @@ const Login = () => {
   return (
     <Container>
       <Wrapper>
-        <Title></Title>
+        <Title>
+          <SetLink to='/'><Logo>PeaStore.</Logo></SetLink>
+        </Title>
         <Form>
           <Input placeholder='username'/>
           <Input placeholder='password'/>

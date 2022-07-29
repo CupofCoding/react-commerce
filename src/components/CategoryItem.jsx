@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import ProductList from "../pages/ProductList";
+import { SetLink } from './SetLink'
 
 // import React from 'react'
 const Container = styled.div`
@@ -47,7 +49,9 @@ const CategoryItem = ({item}) => {
       <Image src={item.img}/>
       <Info>
           <Title>{item.title}</Title>
-          <Button>SHOP NOW</Button>
+          <SetLink to="/products/:category" element={<ProductList />}>
+            <Button>SHOP NOW</Button>
+          </SetLink>
       </Info>
     </Container>
   )
