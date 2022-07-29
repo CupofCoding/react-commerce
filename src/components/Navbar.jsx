@@ -1,3 +1,6 @@
+import { Link, Route } from 'react-router-dom';
+// import { Link, useMatch, useResolvedPath } from 'react-router-dom';
+import { SetLink } from './SetLink'
 import React from 'react'
 // run npm install styled-components
 import styled from 'styled-components'
@@ -5,6 +8,7 @@ import styled from 'styled-components'
 import { Search, ShoppingCartOutlined } from '@mui/icons-material';
 // run npm install @mui/material
 import { Badge } from '@mui/material'
+import Register from '../pages/Register';
 
 
 //styled-components are a nice way of implementing classes without conflicting class names with children
@@ -68,9 +72,10 @@ const Right = styled.div`
 `
 
 const MenuItem = styled.div`
-  font-size:14pz;
+  font-size: 16px;
   cursor: pointer;
-  margin-left: 25px
+  margin-left: 25px;
+  text-decoration: none;
 `
 
 const Navbar = () => {
@@ -85,16 +90,22 @@ const Navbar = () => {
           </SearchContainer>
         </Left>
         <Center>          
-          <Logo>PeaStore.</Logo>          
+          <Link style={{textDecoration: 'none'}} to='/'><Logo>PeaStore.</Logo></Link>
         </Center>
-        <Right>
-          <MenuItem>Register</MenuItem>
-          <MenuItem>Sign In</MenuItem>
-          <MenuItem>
-            <Badge badgeContent={4} color="primary">
-              <ShoppingCartOutlined/>
-            </Badge>
-          </MenuItem>
+        <Right>          
+          <SetLink to="./register" component={Register}>
+            <MenuItem>Register</MenuItem>
+          </SetLink>
+          <SetLink to='./login'>
+            <MenuItem>Sign In</MenuItem>
+          </SetLink>
+          <SetLink to='./cart'>
+            <MenuItem>
+              <Badge badgeContent={4} color="primary">
+                <ShoppingCartOutlined/>
+              </Badge>
+            </MenuItem>
+          </SetLink>
         </Right>
       </Wrapper>
     </Container>
@@ -110,4 +121,4 @@ const Navbar = () => {
   )
 }
 
-export default Navbar
+export default Navbar;
