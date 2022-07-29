@@ -93,7 +93,7 @@ const Navbar = () => {
           <Link style={{textDecoration: 'none'}} to='/'><Logo>PeaStore.</Logo></Link>
         </Center>
         <Right>          
-          <SetLink to="./register" component={Register}>
+          <SetLink to="./register">
             <MenuItem>Register</MenuItem>
           </SetLink>
           <SetLink to='./login'>
