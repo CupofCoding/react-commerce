@@ -3,6 +3,9 @@ import styled from 'styled-components'
 import { ArrowLeftOutlined, ArrowRightOutlined } from "@mui/icons-material"
 import { useState } from 'react';
 import { sliderItems } from '../data'
+import ProductList from "../pages/ProductList";
+import { SetLink } from './SetLink'
+
 
 const Container = styled.div`
     width: 100%;
@@ -113,7 +116,9 @@ const Slider = () => {
                 <InfoContainer>
                     <Title>{item.title}</Title>
                     <Description>{item.description}</Description>
-                    <Button>Shop Now &gt;&gt;</Button>
+                    <SetLink to="/products/:category" element={<ProductList />}>
+                        <Button>Shop Now &gt;&gt;</Button>
+                    </SetLink>
                 </InfoContainer>
             </Slide>
             ))}

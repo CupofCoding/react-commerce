@@ -7,6 +7,11 @@ import { Add, Remove } from '@mui/icons-material';
 // import { useEffect, useState } from "react";
 // import { userRequest } from "../requestMethods";
 // import { useHistory } from "react-router";
+import ProductList from "../pages/ProductList";
+// import { SetLink } from './SetLink'
+import { Link } from 'react-router-dom'
+import { useState } from 'react';
+
 
 
 const Container = styled.div``;
@@ -164,7 +169,21 @@ const Button = styled.button`
   }
 `;
 
-const Cart = () => {
+const Cart = ({ type }) => {
+  
+  // const [openItems, setOpenItems] = useState(false);
+  const [items, setItems] = useState({
+    item_id: 1,
+    item_qty: 1,      
+  });
+  
+  const handleItem = (name, operation) =>
+    setItems((prev) => {
+        return {
+            ...prev, 
+            [name]: operation === 'incr' ? items[name] ++ : items[name] --,
+        };
+    });
   // const cart = useSelector((state) => state.cart);
   // const [stripeToken, setStripeToken] = useState(null);
   // const history = useHistory();
@@ -195,7 +214,9 @@ const Cart = () => {
       <Wrapper>
         <Title>Your Cart</Title>
         <Top>
-          <TopButton>Continue Shopping</TopButton>
+          <Link to="/products/:category" element={<ProductList />}>
+            <TopButton>Continue Shopping</TopButton>
+          </Link>
           <TopTexts>Shopping Bag(4)</TopTexts>
           <TopText>Your Wishlist (2)</TopText>
           <TopButton type="filled">Checkout Now</TopButton>
@@ -224,6 +245,16 @@ const Cart = () => {
                   <Qty>1</Qty>
                   <Add />
                 </QtyContainer>
+                <QtyContainer>
+                  <button
+                    disabled={items.item_qty <= 0}
+                    className="itemCounterButton" 
+                    onClick={()=>handleItem('item_qty','decr')}>-</button>
+                  <span className="guestCounterNumber"> {items.item_qty} </span>
+                  <button
+                    className="itemCounterButton" 
+                    onClick={()=>handleItem('item_qty','incr')}>+</button>
+                </QtyContainer>
                 <ProductPrice>$ 40.00</ProductPrice>
               </PriceDetail>
             </Product>
@@ -249,6 +280,16 @@ const Cart = () => {
                   <Remove />
                   <Qty>1</Qty>
                   <Add />
+                </QtyContainer>
+                <QtyContainer>
+                  <button
+                    disabled={items.item_qty <= 0}
+                    className="itemCounterButton" 
+                    onClick={()=>handleItem('item_qty','decr')}>-</button>
+                  <span className="guestCounterNumber"> {items.item_qty} </span>
+                  <button
+                    className="itemCounterButton" 
+                    onClick={()=>handleItem('item_qty','incr')}>+</button>
                 </QtyContainer>
                 <ProductPrice>$ 15.99</ProductPrice>
               </PriceDetail>
