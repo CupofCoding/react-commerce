@@ -3,7 +3,7 @@
 import styled from "styled-components";
 // run npm install @mui/icons-material
 import { FavoriteBorderOutlined, SearchOutlined, ShoppingCartOutlined } from '@mui/icons-material';
-import { Product as ProductInfo } from "../pages/Product";
+// import { Product as ProductInfo } from "../pages/Product";
 import { SetLink } from './SetLink'
 
 const Info = styled.div`

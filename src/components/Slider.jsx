@@ -16,6 +16,7 @@ const Container = styled.div`
     overflow: hidden;
 `;
 
+// pass properties as JS code
 const Arrow = styled.div`
     width: 45px;
     height: 45px;
@@ -27,8 +28,7 @@ const Arrow = styled.div`
     justify-content: center;
     position: absolute;
     top: 0;
-    bottom: 0;
-    // pass properties as JS code
+    bottom: 0;    
     left: ${(props) => props.direction === "left" && "10px"};
     right: ${(props) => props.direction === "right" && "10px"};
     margin: auto;
